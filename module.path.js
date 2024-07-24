@@ -10,7 +10,7 @@ function getAbsolutePath(url){
     return check(url) && path.resolve(url)
 }
 function setAbsolutePath(file){
-    return check(url) && path.join(__dirname, file)
+    return check(file) && path.join(__dirname, file)
 }
 
 module.exports = {
