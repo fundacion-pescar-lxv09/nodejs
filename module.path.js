@@ -4,8 +4,7 @@ const check = (url) => typeof url === "string"
 
 function getURLInfo(url){
     return check(url) && path.parse(url)
-    }
-
+}
 function getAbsolutePath(url){
     return check(url) && path.resolve(url)
 }
