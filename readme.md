@@ -23,7 +23,6 @@ NodeJS nos ofrece una _pseudoconsola_ que puede ser ejecutada directamente, o de
 
 Objeto que ofrece métodos para imprimir información y errores en la consola estándar. Es bastante útil debido a que facilita la visualización de datos y la depuración de aplicaciones. 
 
-
 | Metodo | Descripción |
 |--|--|
 | __log__	| Imprime mensajes en la consola estándar |
@@ -33,7 +32,7 @@ Objeto que ofrece métodos para imprimir información y errores en la consola es
 
 ## process
 
-Interfaz para interactuar con el entorno del proceso de ejecución. Permite acceder a información y controlar el comportamiento del proceso en ejecución, así como gestionar eventos y configuraciones relacionadas con el proceso.
+Interfaz para interactuar con el entorno del proceso de ejecución. Permite acceder a información y controlar el comportamiento del mismo; así como gestionar eventos y configuraciones relacionadas con el proceso.
 
 | Propiedad | Tipo | Descripcion |
 |--|--|--|
@@ -50,7 +49,6 @@ Interfaz para interactuar con el entorno del proceso de ejecución. Permite acce
 
 Mecanismos que permiten programar la ejecución de funciones después de un período de tiempo específico o en intervalos regulares. Estos se basan en el módulo de temporización del entorno de ejecución de Node.js, que a su vez utiliza las funciones del sistema operativo para gestionar los tiempos de espera.
 
-
 | Metodo | Descripcion |
 |--|--|
 | __setImmediate__ | Programa la ejecución de una funcion al final de la cola de eventos |
@@ -65,13 +63,6 @@ Mecanismos que permiten programar la ejecución de funciones después de un per�
 ### os
 
 Módulo que permite obtener información sobre el entorno del sistema, como la arquitectura de la CPU, la memoria disponible y el sistema de archivos. Esto es útil para la depuración, el monitoreo y la optimización del rendimiento de las aplicaciones.
-
-| Propiedad | Descripción |
-|--|--|
-| __platform__ | Devuelve el sistema operativo de la plataforma actual |
-| __cpus__ | Devuelve información sobre los procesadores del sistema |
-| __totalmem__ | Devuelve la memoria total del sistema |
-
 
 | Método | Descripción |
 |--|--|
