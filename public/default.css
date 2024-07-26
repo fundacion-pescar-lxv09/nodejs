@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Ubuntu', 'Calibri', sans-serif;
+}
