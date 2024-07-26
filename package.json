@@ -1,0 +1,29 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "servidor web con archivos dinamicos y estaticos utilizando solicitudes get post put delete",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test",
+    "start" : "node --watch .",
+    "deploy" : "git push --all",
+    "update": "git pull"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fundacion-pescar-lxv09/nodejs.git"
+  },
+  "keywords": [
+    "servidor web estatico",
+    "implementacion de modulo http"
+  ],
+  "author": "Cristian Racedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fundacion-pescar-lxv09/nodejs/issues"
+  },
+  "homepage": "https://github.com/fundacion-pescar-lxv09/nodejs#readme"
+}
