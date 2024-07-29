@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const msg = `servidor iniciado en ${HOST}:${PORT}`
 // Procesamiento de Rutas
 app.get("*", (req, res) => {
-    res.json({
+    res.render({
         title: "pescar express", 
         message: "bienvenido a la pagina principal",
     })
