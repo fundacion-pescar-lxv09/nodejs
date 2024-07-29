@@ -1,0 +1,33 @@
+{
+  "name": "express-server",
+  "version": "1.0.0",
+  "description": "Sitio web y aplicacion utilizando el framework express y otras bibliotecas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch .",
+    "deploy": "git push --all && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fundacion-pescar-lxv09/nodejs.git"
+  },
+  "keywords": [
+    "express framework",
+    "aplicacion crud",
+    "sitio web"
+  ],
+  "author": "cristian racedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fundacion-pescar-lxv09/nodejs/issues"
+  },
+  "homepage": "https://github.com/fundacion-pescar-lxv09/nodejs#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
