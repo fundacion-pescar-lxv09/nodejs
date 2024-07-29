@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/fundacion-pescar-lxv09/nodejs#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pug": "^3.0.3"
   },
   "devDependencies": {
     "morgan": "^1.10.0"
