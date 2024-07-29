@@ -1,0 +1,12 @@
+html(lang="es")
+    include ./partials/head.pug
+    body
+        header#header
+            h1= title
+            p= message
+        include ./partials/nav.pug
+        main
+            if user
+                include ./layouts/user.pug
+            if posts 
+                include ./layouts/posts.pug

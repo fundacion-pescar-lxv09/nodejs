@@ -1,0 +1,7 @@
+nav
+    a(href="#")= title
+    button.navbar-toggler.navbar-toggler-icon
+    ul.navbar-nav.navbar-collapse
+        each a in links
+            li
+                a(href=a["link"])= a["text"]
