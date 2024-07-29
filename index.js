@@ -12,9 +12,9 @@ const app = http.createServer((req,res) => {
     let headers = {"Content-Type":"text/html; charset='utf-8'"};
     const {url, method} = req;
     res.writeHead(200,headers);
-    res.write(Nav());
     switch(method){
     case "GET":
+        res.write(Nav());
         if (url.toLowerCase().includes("product")){
             content = Header("Productos") + Products();
         }
