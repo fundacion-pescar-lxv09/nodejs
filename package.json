@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start" : "node --watch .",
-    "deploy" : "git push --all",
+    "deploy" : "git push --all && git push --tags",
     "update": "git pull"
   },
   "repository": {

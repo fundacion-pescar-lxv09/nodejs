@@ -24,7 +24,7 @@ const app = http.createServer((req,res) => {
         else if(url.toLowerCase().includes("home")){
             content = Header("Inicio") + Home();
         }
-        else content = ErrorPage();
+        else content = ErrorPage(404, "Pagina no encontrada");
         res.end(content);
     break;
     case "POST":
@@ -32,9 +32,10 @@ const app = http.createServer((req,res) => {
         readFile("./public/contact.html", (err,data)=> res.end(data));
     break;
     case "PUT":
-        readFile("./public/default.css", (err,data) => res.end(data));
+        readFile("./public/contact.html", (err,data) => res.end(data));
     break;
     case "DELETE":
+        res.end(ErrorPage(403, "Accion no autorizada"))
     break;
     }
 })
