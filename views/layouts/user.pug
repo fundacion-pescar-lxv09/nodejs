@@ -3,6 +3,9 @@ section.card.container.my-4.p-0
         h2= user.name
         p= user.email
     div.card-body
+        h3 Datos Personales
         ul.list-group.list-group-flush
-            each item in user.address
-                li.list-group-item= item    
+            each item, field in user.address
+                li.list-group-item 
+                    strong.rounded-pill.text-light.bg-dark.py-2.px-3 #{field}: 
+                    span.fw-bold.px-3= item
