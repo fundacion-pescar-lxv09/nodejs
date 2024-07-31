@@ -1,7 +1,7 @@
 each p in posts
-    article.card
+    article.card.container.my-4.p-0
         h2.card-header= p.title
         p.card-body= p.description
-        div.card-footer
+        div.card-footer.d-flex.justify-content-between
             p= p.price
-            button ver mas
+            button.btn.btn-primary ver mas

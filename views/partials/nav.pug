@@ -1,7 +1,7 @@
-nav
-    a(href="#")= title
-    button.navbar-toggler.navbar-toggler-icon
-    ul.navbar-nav.navbar-collapse
+nav.navbar.navbar-dark.bg-dark.bg-gradient.navbar-expand-md.sticky-top.p-2
+    a.navbar-brand(href="#")= title
+    button.navbar-toggler.navbar-toggler-icon(data-bs-target=".navbar-nav" data-bs-toggle="collapse")
+    ul.navbar-nav.navbar-collapse.collapse
         each a in links
             li
-                a(href=a["link"])= a["text"]
+                a.nav-link(href=a["link"])= a["text"]

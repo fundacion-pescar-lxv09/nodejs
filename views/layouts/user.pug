@@ -1,8 +1,8 @@
-section
+section.card.container.my-4.p-0
     header.card-header
         h2= user.name
         p= user.email
     div.card-body
-        ul
+        ul.list-group.list-group-flush
             each item in user.address
-                li= item
+                li.list-group-item= item    
