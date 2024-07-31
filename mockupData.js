@@ -6,7 +6,9 @@ export const appData = {
         { text: "Inicio", link: "/" },
         { text: "Perfil", link: "/user/1" },
         { text: "Publicaciones", link: "/posts" }
-    ]
+    ],
+    user: false,
+    posts: false
 }
 export const user = {
     name: "cristian",
