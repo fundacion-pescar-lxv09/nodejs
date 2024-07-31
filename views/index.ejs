@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/nav') %>
+    <% if (posts){ %>
+        <%- include('layouts/posts') %>
+    <% } else if (user) { %>
+        <%- include('layouts/user') %>
+    <% } else {%>
+        <%-include('layouts/404') %>
+    <% } %>
+    <%- include('partials/footer') %>
+</body>
+</html>

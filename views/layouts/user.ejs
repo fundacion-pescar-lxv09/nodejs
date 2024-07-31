@@ -1,0 +1,19 @@
+<section class="card container my-4 p-0">
+    <header class="card-header">
+        <h2><%= user.name %></h2> 
+        <p><%= user.email %></p> 
+    </header>
+    <div class="card-body">
+        <h3>Datos Personales</h3>
+        <ul class="list-group list-group-flush">
+        <% Object.keys(user.address).forEach( (k) => { %>
+            <li class="list-group-item">
+                <strong class="rounded-pill text-light bg-dark py-2 px-3">
+                    <%= k %>
+                </strong>
+                <span class="fw-bold px-3"> <%= user.address[k] %></span>
+            </li>
+        <% }) %>
+        </ul>
+    </div>
+</section>
