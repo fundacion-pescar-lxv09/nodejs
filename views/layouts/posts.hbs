@@ -1,0 +1,12 @@
+{{#each posts}}
+    {{#with this}}
+    <article class="card container my-4 p-0">
+        <h2 class="card-header">{{ title }}</h2> 
+        <p class="card-body">{{description}}</p> 
+        <div class="card-footer d-flex justify-content-between">
+            <p>{{price}}</p> 
+            <button class="btn btn-primary">ver mas</button>
+        </div>
+    </article>
+    {{/with}}
+{{/each}}

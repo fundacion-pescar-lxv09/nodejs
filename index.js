@@ -10,10 +10,9 @@ const PORT = process.env.PORT || 3000;
 const msg = `servidor iniciado en ${HOST}:${PORT}`
 
 // Config Motor de Plantillas
+const view = process.cwd()+"/views/";
 const config = {
-    partialsDir:  "views/partials",
-    layoutsDir: "views/layouts",
-    defaultLayout: "../index.hbs",
+    defaultLayout: view+"index",
     extname: "hbs"
 }
 app.engine("hbs", engine(config))
@@ -21,13 +20,16 @@ app.set("view engine", "hbs");
 
 // Procesamiento de Rutas
 app.get("/", (req, res) => {
-        res.render("index", appData)
+    res.render("layouts/home", appData)
 })
 app.get("/user/:id", (req, res) =>{
-    res.render("index", { ...appData, user })
+    res.render("layouts/user", { ...appData, user })
 })
 app.get("/posts", (req, res) => {
-    res.render("index", { ...appData, posts })
+    res.render("layouts/posts", { ...appData, posts })
+})
+app.get("*", (req, res) => {
+    res.render("layouts/404", { ...appData })
 })
 
 // Inicializacion del Servidor

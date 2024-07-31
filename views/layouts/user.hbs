@@ -1,0 +1,21 @@
+<section class="card container my-4 p-0">
+    {{#with user}}
+    <header class="card-header">
+        <h2>{{name}}</h2> 
+        <p>{{email}}</p> 
+    </header>
+    <div class="card-body">
+        <h3>Datos Personales</h3>
+        <ul class="list-group list-group-flush">
+        {{#each address }}
+            <li class="list-group-item">
+                <strong class="rounded-pill text-light bg-dark py-2 px-3">
+                    {{@key}}
+                </strong>
+                <span class="fw-bold px-3"> {{ this }}</span>
+            </li>
+        {{/each }}
+        </ul>
+    </div>
+    {{/with}}
+</section>
