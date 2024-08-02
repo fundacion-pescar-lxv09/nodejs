@@ -112,7 +112,7 @@ block footer
   p Footer information here.
 ```
 
-### 7. **Comentarios**
+## Comentarios
 
 Pug permite comentarios en dos formatos: comentarios para el navegador y comentarios en el código.
 
