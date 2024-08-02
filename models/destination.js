@@ -26,11 +26,11 @@ const destinationSchema = {
     location: {
         city: {
             type: String,
-            isRequired: true
+            required: true
         },
         country: {
             type: String,
-            isRequired: true
+            required: true
         },
         region: String,
         coords: {

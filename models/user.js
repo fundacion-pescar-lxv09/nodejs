@@ -5,17 +5,19 @@ const userSchema = {
         type: String,
         minLength: 4,
         maxLength: 20,
-        isRequired: true
+        unique: true,
+        required: true
     },
     email: {
         type:String,
         minLength: 8,
-        isRequired: true
+        unique: true,
+        required: true
     },
     password: {
         type:String,
         minLength: 4,
-        isRequired: true
+        required: true
     },
     userData: {
         firstName: String,
