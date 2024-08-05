@@ -44,4 +44,5 @@ const destinationSchema = {
         currency: String
     }]
 };
-export const destinations = mongoose.model("destination", destinationSchema)
+const Destination = mongoose.model("destinations", destinationSchema)
+export default Destination;
