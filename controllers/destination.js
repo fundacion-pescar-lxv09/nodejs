@@ -12,13 +12,7 @@ export const createDest = async (req, res) => {
 }
 export const getDest = (req, res) => {
     const { countryId, id } = req.params
-    const query = (
-        countryId ? 
-        {"location.country": countryId } : 
-        id ?
-        {_id: id} : 
-        {}
-    )
+    const query = ( countryId ? {"location.country": countryId } : id ? {_id: id} : {} )
     Destination.find(query)
     .then(results => res.json(results))
     .catch(err => console.log(err))
@@ -38,4 +32,10 @@ export const deleteDest = (req, res) => {
         message: "El destino acaba de ser eliminado"
     }))
     .catch(err => console.log(err))
+}
+export const getIfExists = ({params:{id}}, res) => {
+    Destination.find({[id]:{ $exists: true }})
+    .then(results => res.json(results))
+    .catch(err => res.json(err))
+
 }
