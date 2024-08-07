@@ -1,4 +1,4 @@
-import { User, Post, Destination } from "../models/index.js"
+import models from "../models/index.js"
 import { resolve, setQuery } from "../utils/index.js"
 
 export const createDoc = ({url, body},res) => {
@@ -17,7 +17,10 @@ export const deleteDoc = ({params:{id:_id}}, res) =>{
     const Model = setModel(url)
     resolve(res, Model.deleteOne({_id}))
 }
+const check = (url,text) => {
+    url.includes(text)
+}
 export const setModel = (url) =>
-    url.contains('users') ? User : 
-    url.contains('posts') ? Post : 
-    url.contains('destinations') ? Destination : null
+    Object.keys(models).forEach(k => {
+        if (check(url, k)) return models[k]
+    })
