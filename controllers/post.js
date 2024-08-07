@@ -1,18 +1,10 @@
 import Post from "../models/post.js"
-import { resolve } from "../utils/resolve.js"
-
-export const createPost = (req, res) => {
-    const newPost = new Post(req.body)
-    resolve(res, newPost.save())
-}
-export const getPosts = async(req, res) => {
-    resolve(res, Post.find())
-}
-export const updatePost = (req, res) => {
-    resolve(res, Post.updateOne(
-        {_id: req.params.id}, // criterio de busqueda
-        {$set: req.body} // valores de actualizacion
-))}
-export const deletePost = (req, res) => {
-    resolve(res, Post.deleteOne({_id: req.params.id}))
-}
+import { resolve, setQuery } from "../utils/index.js"
+export const createPost = ({body}, res) => 
+    resolve(res, new Post(body).save())
+export const getPosts = async(req, res) => 
+    resolve(res, Post.find(setQuery(req)))
+export const updatePost = ({body, params:{id:_id}}, res) => 
+    resolve(res, Post.updateOne({_id}, {$set: body}))
+export const deletePost = ({params: {id:_id}}, res) =>
+    resolve(res, Post.deleteOne({_id}))
