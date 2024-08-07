@@ -1,8 +1,10 @@
 // Importacion de Modulos
 import express from "express";
 import morgan from "morgan";
+
 import dbConn from "./config/db.js";
 import dest from "./routes/destination.js";
+import post from "./routes/post.js";
 import usr from "./routes/user.js";
 // Declaraciones
 const app = express(); // Servidor Web
@@ -18,6 +20,7 @@ dbConn()
 // Procesamiento de Rutas
 app.use("/destinations", dest);
 app.use("/users", usr);
+app.use("/posts", post)
 
 app.get("*", (req, res) => {
     res.json({
