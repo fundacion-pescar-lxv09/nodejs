@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@types/node": "^22.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "devDependencies": {},
+  "scripts": {
+    "start": "ts-node index.ts",
+    "build": "tsc index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
