@@ -15,3 +15,4 @@ abstract class Person {
         return this.age
     }
 }
+export default Person;

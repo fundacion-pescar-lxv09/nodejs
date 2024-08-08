@@ -13,3 +13,4 @@ class Product {
         this.price+= this.price*percent
     }
 }
+export default Product;

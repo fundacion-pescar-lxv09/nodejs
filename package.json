@@ -1,18 +1,23 @@
 {
-  "dependencies": {
-    "@types/node": "^22.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
-  },
   "name": "typescript",
   "version": "1.0.0",
   "main": "index.ts",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
     "start": "ts-node index.ts",
-    "build": "tsc index.ts"
+    "test": "mocha src/index.test.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "^4.3.17",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^22.1.0",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
 }
