@@ -42,11 +42,11 @@ Es una __metodología de desarrollo de software__ que amplía TDD al enfocarse e
     let result, a, b;
     Given('I have the numbers {int} and {int}', (num1, num2) => { a = num1;  b = num2; });
     When('I add them', () => { result = sum(a, b) });
-    Then('the result should be {int}', (expectedResult) => {
-        assert.strictEqual(result, expectedResult)
-    });
+    Then('the result should be {int}', (expectedResult) => { assert.strictEqual(result, expectedResult) });
     ```
 - **ejecucion**
     ```
     npx cucumber-js
     ```
+    
+[Volver](../readme.md)
