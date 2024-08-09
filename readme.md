@@ -25,3 +25,6 @@ Esto es una guia para los alumnos de la capacitacion de Introduccion a NodeJS qu
     * [Pug](./docs/pug.md)
     * [EJS](./docs/ejs.md)
     * [Handlebars](./docs/hbs.md)
+* Pruebas de Desarrollo
+    * [TDD](./docs/tdd.md)
+    * [BDD](./docs/bdd.md)
