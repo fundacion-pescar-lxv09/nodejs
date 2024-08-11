@@ -28,6 +28,8 @@ Esto es una guia para los alumnos de la capacitacion de Introduccion a NodeJS qu
 * Patrones de Diseño
     * [DAO](./docs/dao.md)
     * [DTO](./docs/dto.md)
+    * [MVC](./docs/mvc.md)
+    * [MRC](./docs/mrc.md)
 * Pruebas de Desarrollo
     * [TDD](./docs/tdd.md)
     * [BDD](./docs/bdd.md)
