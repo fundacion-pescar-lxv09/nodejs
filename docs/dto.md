@@ -1,4 +1,3 @@
-
 ## Data Transfer Object
 
 El patrón DTO se utiliza para __transferir datos entre diferentes capas de la aplicación__ o entre aplicaciones, minimizando la cantidad de datos transmitidos y proporcionando una _estructura clara para los datos_.
