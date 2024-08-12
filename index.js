@@ -30,3 +30,4 @@ app.get("*", (req, res) => {
 })
 // Inicializacion del Servidor
 app.listen(PORT, HOST, console.log(msg))
+export default app;

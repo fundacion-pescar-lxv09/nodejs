@@ -1,6 +1,6 @@
-import User from "../models/user"
-import { PaymentData } from "../dao"
-import { resolve } from "../utils"
+import User from "../models/user.js"
+import { PaymentData } from "../dao/index.js"
+import { resolve } from "../utils/index.js"
 
 export const getPaymentData = (req, res) => {
     resolve(res, User.aggregate(

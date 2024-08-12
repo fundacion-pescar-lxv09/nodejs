@@ -1,6 +1,6 @@
-import { Address } from "./address";
-import { Package } from "./package";
-import { PaymentData } from "./paymenData";
-import { UserData } from "./userData";
+import { Address } from "./address.js";
+import { Package } from "./package.js";
+import { PaymentData } from "./paymenData.js";
+import { UserData } from "./userData.js";
 
 export { Address, Package, PaymentData, UserData }
