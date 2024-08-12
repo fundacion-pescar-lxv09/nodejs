@@ -1,5 +1,5 @@
 import {expect} from "chai" // esm
-import division from "../index.js"
+import division from "../dist/index.js"
 /* TDD (Test Driven Development)
     - orientada en la identificacion de pruebas
     - se inicia con las pruebas antes que el codigo
@@ -18,6 +18,9 @@ describe("verificacion de funcion division", ()=> {
     });
     it("utilizar un string devuelve error", () => {
         expect(div(Number("10"),Number("a"))).to.have.property("message")
+    })
+    it("dividir entre cero no es posible", () => {
+        expect(div(0,0)).to.have.property("code");
     })
 });
 // BDD (Behavior Driven Development)
