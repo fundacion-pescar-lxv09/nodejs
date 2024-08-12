@@ -1,4 +1,4 @@
-export const auth = async(req, res) => {
+export const auth = async(req, res, next) => {
     const payload = {
         ...req.body, 
         password: await bcrypt.hash(req.body.password)
@@ -12,10 +12,9 @@ export const verify = (req, res) => {
     const data = req.header("Authorization").split(" ")[1]
     const secret = process.env.SECRET ?? "miSecret2024Token!#$";
     const decoded = jwt.verify(data, secret)
-
-    User.find(decoded)
-    .then(results=> res.json(results.length > 0 ? 
-        { message: "acceso condedido" } : { message: "usuario no identificado" }))
-    .catch(err => res.json(err))
+    if (!decoded) res.json({
+        title: "Pescar Express",
+        message: "Acceso no concedido"
+    })
     next()
 }
