@@ -49,7 +49,7 @@ export const getSignIn = async(req,res) => {
         .catch((err) => res.json(err))
     }
     else {
-        res.json({
+        res.render("layouts/signin", {
             error: true,
             message: "revise los datos ingresados"
         })
