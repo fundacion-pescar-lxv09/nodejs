@@ -1,0 +1,33 @@
+<form id="signin" action="/signin" method="post">
+    <h2>Registrate</h2>
+    <p>{{message}}</p>
+    <label for="username">Elija un nombre de Usuario</label>
+    <input 
+        id="username" 
+        name="username" 
+        type="text"
+        autocomplete="true"
+        required>
+    <label for="username">Ingrese su Correo</label>
+    <input 
+        id="email" 
+        name="email" 
+        type="email"
+        autocomplete="true"
+        required>
+    <label for="pass1">Escriba su Contraseña</label>
+    <input 
+        id="pass1" 
+        name="password" 
+        type="password"
+        autocomplete="true"
+        required>
+    <label for="pass2">Repita la Contraseña</label>
+    <input 
+        id="pass2" 
+        name="password" 
+        type="password"
+        autocomplete="true"
+        required>
+    <button>Aceptar</button>
+</form>

@@ -1,0 +1,21 @@
+<form id="login" action="/login" method="post">
+    <h2>Iniciar Sesion</h2>
+    <p class="alert alert-{{#if error}}danger{{#else}}primary{{/if}}">
+        {{message}}
+    </p>
+    <label for="username">Ingrese su Usuario</label>
+    <input 
+        id="username" 
+        name="username" 
+        type="text"
+        autocomplete="true"
+        required>
+    <label for="password">Ingrese su Contraseña</label>
+    <input 
+        id="password" 
+        name="password" 
+        type="password"
+        autocomplete="true"
+        required>
+    <button>Aceptar</button>
+</form>
