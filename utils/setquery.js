@@ -1,4 +1,4 @@
-export const setQuery = ({ params, body, query}) => {
+export const setQuery = (model, {params, body, query}) => {
     const queryParams = query && [ 
         {   
             price:{ $gte: query?.minPrice },
@@ -26,11 +26,9 @@ export const setQuery = ({ params, body, query}) => {
         { "lodging.pension.type": params?.pensionId }
     ]
     const reQuery = {
-        $or: [
-            ...queryParams,
-            ...bodyParams,
-            ...pathParams    
-        ]
+        ...queryParams,
+        ...bodyParams,
+        ...pathParams    
     }
     return reQuery
 }
