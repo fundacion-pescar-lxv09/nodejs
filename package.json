@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/index.test.js",
     "start": "node --watch .",
     "deploy": "git push --all && git push --tags"
   },
@@ -27,14 +27,15 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
+    "express-handlebars": "^8.0.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.2"
   },
   "devDependencies": {
-    "mocha": "*",
     "chai": "*",
     "chai-http": "*",
     "dotenv": "^16.4.5",
+    "mocha": "*",
     "morgan": "^1.10.0"
   }
 }
