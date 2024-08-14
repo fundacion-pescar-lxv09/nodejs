@@ -12,6 +12,6 @@ const postSchema = {
         categories: [String]
     }
 }
-const Post = mongoose.model("Posts", postSchema)
+const Post = mongoose.model("posts", postSchema)
 
 export default Post 

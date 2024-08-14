@@ -4,7 +4,7 @@ import { Router } from "express";
 const dest = Router();
 // Rutas de la aplicacion
 dest.get("/", d.getDest)
-dest.get("/:id?", d.getDest)
+dest.get("/:id", d.getDest)
 dest.post("/", d.createDest)
 dest.put("/:id", d.updateDest)
 dest.delete("/:id", d.deleteDest)
