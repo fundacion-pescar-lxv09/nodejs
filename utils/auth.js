@@ -1,18 +1,18 @@
-export const auth = async(req, res, next) => {
-    const payload = {
-        ...req.body, 
-        password: await bcrypt.hash(req.body.password)
-    };
+export const auth = async(payload) => {
     const secret = process.env.SECRET ?? "miSecret2024Token!#$"
     const token = await jwt.sign(payload, secret, { expiresIn: "1h" })
-    res.json(!token ? {message: "ha ocurrido un error"}:{token})
-    next()
+    return (!token ? {
+        error: true, 
+        message: "ha ocurrido un error"
+    }:
+    {token})
 }
-export const verify = (req, res) => {
+export const verify = async (req, res, next) => {
     const data = req.header("Authorization").split(" ")[1]
     const secret = process.env.SECRET ?? "miSecret2024Token!#$";
     const decoded = jwt.verify(data, secret)
-    if (!decoded) res.json({
+    const results = await User.find(decoded)
+    if (!results.length > 0) res.json({
         title: "Pescar Express",
         message: "Acceso no concedido"
     })

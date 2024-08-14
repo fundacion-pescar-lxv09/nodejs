@@ -1,8 +1,10 @@
 // Importacion de Modulos
 import express from "express";
 import morgan from "morgan";
+import { engine } from "express-handlebars"
 
 import dbConn from "./config/db.js";
+import auth from "./routes/auth.js";
 import dest from "./routes/destination.js";
 import post from "./routes/post.js";
 import usr from "./routes/user.js";
@@ -17,17 +19,23 @@ app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false}))
 // Conexion Base de Datos
 dbConn()
+// Motor de Plantillas
+const view = process.cwd()+"/views/";
+const config = {
+    partialsDir: view+"partials",
+    layoutsDir: view+"layouts",
+    defaultLayout: view+"index",
+    extname: "hbs"
+}
+app.engine("hbs", engine(config))
+app.set("view engine", "hbs")
 // Procesamiento de Rutas
+app.use("/", auth);
 app.use("/destinations", dest);
 app.use("/users", usr);
 app.use("/posts", post)
 
-app.get("*", (req, res) => {
-    res.json({
-        title: "pescar express", 
-        message: "bienvenido a la pagina principal",
-    })
-})
+app.get("*", express.static("./public"))
 // Inicializacion del Servidor
 app.listen(PORT, HOST, console.log(msg))
 export default app;
