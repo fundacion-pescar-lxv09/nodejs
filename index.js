@@ -1,29 +1,30 @@
 import express from "express";
 import { Server } from "socket.io";
-import { createServer } from "node:http";
-
+import { createServer } from "http";
 // Variables de Entorno
-const PORT = process.env.PORT ?? 3000
+const PORT = process.env.PORT ?? 3000;
 // Configuracion
-const app = express()
-const server = createServer(app)
-const ws = new Server(server)
+const app = express();
+const server = createServer(app);
+const ws = new Server(server);
 // Rutas estaticas
-app.use(express.static('public'))
+app.use(express.static('public'));
 // Conexion WebSocket
 ws.on("connection", (socket) => {
-    console.log("cliente conectado", socket);
-// Eventos Cliente/Servidor
+    console.log("cliente conectado", socket.id);
+    // Eventos Cliente/Servidor
     // Servidor recibe un Mensaje de un Nodo
     socket.on("message", (data) => {
-        console.log(data)
-    // Servidor envia un Mensaje a los demas Nodos
-        ws.emit("message", data)
-    })
-})
-// Desconexion WebSocket
-ws.on("disconnect", () => {
-    console.log("cliente desconectado");
-})
+        console.log("mensaje recibido", data);
+        // Servidor envia un Mensaje a los demas Nodos
+        ws.emit("message", data);
+    });
+    // Manejo de desconexión
+    socket.on("disconnect", () => {
+        console.log("cliente desconectado");
+    });
+});
 // Ejecucion de la Aplicacion
-app.listen(PORT, console.log("servidor ejecutandose"))
+server.listen(PORT, () => {
+    console.log(`servidor ejecutandose`);
+});
