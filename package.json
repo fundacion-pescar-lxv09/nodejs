@@ -1,0 +1,21 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  },
+  "devDependencies": {
+    "dotenv": "*",
+    "morgan": "*"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
