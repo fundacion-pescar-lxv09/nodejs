@@ -15,11 +15,11 @@
     "socket.io": "*"
   },
   "devDependencies": {
-    "dotenv": "*",
-    "morgan": "*",
-    "mocha": "*",
     "chai": "*",
-    "chai-http": "*"
+    "chai-http": "*",
+    "dotenv": "*",
+    "mocha": "*",
+    "morgan": "*"
   },
   "author": "",
   "license": "ISC",
