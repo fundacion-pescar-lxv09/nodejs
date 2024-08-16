@@ -1,0 +1,13 @@
+# Dependencias
+node_modules/
+package-lock.json
+yarn.lock
+# Entorno
+.env*
+*.temp
+*.tmp
+# Registro
+logs/
+log
+*.md
+*.txt

@@ -1,19 +1,25 @@
 {
-  "name": "clear",
+  "name": "websockets",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --watch index.js",
-    "test": "mocha"
+    "start": "node .",
+    "test": "mocha",
+    "dev": "node --watch .",
+    "build": "node -v && exit 1"
   },
   "dependencies": {
     "express": "*",
+    "mongoose": "*",
     "socket.io": "*"
   },
   "devDependencies": {
     "dotenv": "*",
-    "morgan": "*"
+    "morgan": "*",
+    "mocha": "*",
+    "chai": "*",
+    "chai-http": "*"
   },
   "author": "",
   "license": "ISC",
