@@ -14,7 +14,7 @@ app.use(express.static('public'));
 ws.on("connection", (socket) => {
     console.log(`cliente ${socket.id} conectado`);
     // Eventos Websocket
-
+    socket.on("shareLocation", (data) => ws.emit("updateLocation", data))
 // Desconexion del Cliente
     socket.on("disconnect", ()=> {
         console.log(`cliente ${socket.id} desconectado`);
