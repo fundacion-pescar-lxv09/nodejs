@@ -8,7 +8,9 @@
     // Eventos
     btnMap.addEventListener("click", () => {
         if (navigator.geolocation){
-            navigator.geolocation.getCurrentPosition((position)=>{
+        navigator.geolocation.getCurrentPosition((position)=>{
+            // La ubicacion esta Habilitada
+            if(typeof position === "object"){
                 // Coordenadas del Cliente
                 const { latitude:lat, longitude:lng } = position?.coords
                 // Disparamos el evento de compartir Ubicacion
@@ -23,9 +25,14 @@
                     title: "Usted esta Aquí",
                     position: { lat, lng },
                     map
-                })
-            })
-        }
+                })    
+            }
+            // EL usuario no Permitio la Ubicacion
+            else {
+                alert("Debes permitir la ubicacion para generar el mapa e identificar donde estas")
+            }
+        })}
+        // El navegador no Soporta Ubicacion
         else {
             alert("Lo sentimos, pero tu navegador No soporta la geolocalizacion")
         }
