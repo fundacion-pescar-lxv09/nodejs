@@ -1,11 +1,7 @@
 {
-  "plugins": ["@babel/syntax-dynamic-import"],
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false
-      }
-    ]
-  ]
+  "plugins": ["@babel/syntax-dynamic-import"], // Importacion dinamica
+  "presets": [[
+      "@babel/preset-env", // Entorno predeterminado de traduccion
+      { "modules": "auto" } // Deteccion automatica de Modulos
+  ]]
 }

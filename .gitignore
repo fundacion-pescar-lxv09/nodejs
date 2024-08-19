@@ -11,3 +11,5 @@ logs/
 log
 *.md
 *.txt
+# Produccion
+dist/
