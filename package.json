@@ -1,5 +1,5 @@
 {
-  "name": "websockets",
+  "name": "my-webpack-project",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -7,7 +7,11 @@
     "start": "node .",
     "test": "mocha",
     "dev": "node --watch .",
-    "build": "node -v && exit 1"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
   },
   "dependencies": {
     "express": "*",
@@ -15,13 +19,27 @@
     "socket.io": "*"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@webpack-cli/generators": "^3.0.7",
+    "babel-loader": "^9.1.3",
     "chai": "*",
     "chai-http": "*",
+    "css-loader": "^7.1.2",
     "dotenv": "*",
+    "html-webpack-plugin": "^5.6.0",
     "mocha": "*",
-    "morgan": "*"
+    "morgan": "*",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "workbox-webpack-plugin": "^7.1.0"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "My webpack project"
 }
