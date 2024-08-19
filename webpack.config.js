@@ -8,7 +8,7 @@ const stylesHandler = 'style-loader';
 const config = {
     entry: './src/index.js',
     output: {
-        path: 'dist',
+        path: process.cwd()+'/dist',
     },
     devServer: {
         open: true,
