@@ -2,7 +2,7 @@
 /* Declaraciones */
     let drawing = false;
     let shape = 'freehand';
-    let startX = startY = currentX = currentY = 0;
+    let X1 = Y1 = X2 = Y2 = 0;
     // Lienzo
     const canvas = document.getElementById('drawingBoard');
     const ctx = canvas.getContext('2d');
@@ -15,6 +15,7 @@
     const saveButton = document.getElementById('save');
     /* Funciones */
     const box = (prop) => canvas.getBoundingClientRect()[prop]
+    const cath = (n1,n2) => Math.pow(n2-n1,2)
     // Acciones con el Lienzo
     const resizeCanvas = () => {
         canvas.width = innerWidth - 20;
@@ -23,24 +24,28 @@
     // Acciones de Dibujo
     const startDraw = (e) => {
         drawing = true;
-        startX = e.clientX - box("left")
-        startY = e.clientY - box("top")
-        console.log(startX, startY, currentX, currentY)
+        X1 = e.clientX - box("left")
+        Y1 = e.clientY - box("top")
+        console.log(X1, Y1, X2, Y2)
     }
     const draw = (e) => {
         if (!drawing) return
-        currentX = e.clientX - box("left");
-        currentY = e.clientY - box("top");
-        if(shape === "freehand") freehand(currentX, currentY)
+        X2 = e.clientX - box("left");
+        Y2 = e.clientY - box("top");
+        if(shape === "freehand") {
+            freehand(X2, Y2)
+            socket.emit('draw', {shape,lineWidth,strokeStyle,X1,X2,Y1,Y2})
+        }
     }
     const stopDraw = (e) => {
+        const { lineWidth, strokeStyle } = ctx;
         drawing = false;
-        currentX = e.clientX - box("left");
-        currentY = e.clientY - box("top");
-        if (shape === "line") line(startX, startY, currentX, currentY)
-        if (shape === "rect") rect(startX, startY, currentX, currentY)
-        if (shape === "circle") circle(startX, startY, currentX, currentY)
-        console.log(canvas)
+        X2 = e.clientX - box("left");
+        Y2 = e.clientY - box("top");
+        if (shape === "line") shapeData = line(X1,Y1,X2,Y2)
+        if (shape === "rect") shapeData = rect(X1,Y1,X2,Y2)
+        if (shape === "circle") shapeData = circle(X1,Y1,X2,Y2)
+        socket.emit('draw', {shape, lineWidth, strokeStyle, X1,Y1,X2,Y2})
     }
     // Creacion de Formas
     const freehand = (x,y) => {
@@ -62,8 +67,7 @@
         ctx.closePath()
     }
     const circle = (x1,y1,x2,y2) => {
-        cat = (n1,n2) => Math.pow(n2-n1,2)
-        const radius = Math.sqrt(cat(x1,x2) + cat(y1,y2));
+        const radius = Math.sqrt(cath(x1,x2) + cath(y1,y2));
         ctx.beginPath()
         ctx.arc(x1,y1, radius, 0, 2 * Math.PI)
         ctx.stroke()

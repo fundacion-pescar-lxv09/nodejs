@@ -14,7 +14,14 @@ app.use(express.static('public'));
 ws.on("connection", (socket) => {
     console.log(`cliente ${socket.id} conectado`);
     // Eventos Websocket
-
+    socket.on('draw', (data) => {
+        // new Shape(data).save()
+        console.log("figura creada ", { user: socket.id, data})
+        socket.emit("draw", data)
+    })
+    socket.on('clear', () => {
+        // Shape.deleteMany({ user: socket.id })
+    })
 // Desconexion del Cliente
     socket.on("disconnect", ()=> {
         console.log(`cliente ${socket.id} desconectado`);
