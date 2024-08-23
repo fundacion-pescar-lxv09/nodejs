@@ -1,3 +1,4 @@
+import { cath } from "./utils.js"
 export const freehand = (x,y, context) => {
     context.lineTo(x,y)
     context.stroke()
