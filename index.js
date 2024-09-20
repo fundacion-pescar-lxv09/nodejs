@@ -3,11 +3,11 @@ import express from "express";
 import morgan from "morgan";
 import { engine } from "express-handlebars"
 
-import dbConn from "./config/db.js";
-import auth from "./routes/auth.js";
-import dest from "./routes/destination.js";
-import post from "./routes/post.js";
-import usr from "./routes/user.js";
+import dbConn from "./src/config/db.js";
+import auth from "./src/routes/auth.js";
+import dest from "./src/routes/destination.js";
+import post from "./src/routes/post.js";
+import usr from "./src/routes/user.js";
 // Declaraciones
 const app = express(); // Servidor Web
 const HOST = process.env.HOST || "localhost";
