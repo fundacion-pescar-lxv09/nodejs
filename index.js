@@ -1,6 +1,7 @@
 // Importacion de Modulos
 import express from "express";
 import morgan from "morgan";
+import cors from "cors"
 import { engine } from "express-handlebars"
 
 import dbConn from "./src/config/db.js";
@@ -8,12 +9,14 @@ import auth from "./src/routes/auth.js";
 import dest from "./src/routes/destination.js";
 import post from "./src/routes/post.js";
 import usr from "./src/routes/user.js";
+import candidates from "./src/routes/candidates.js"
 // Declaraciones
 const app = express(); // Servidor Web
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 3000;
 const msg = `servidor iniciado en ${HOST}:${PORT}`
 // Dependencias de Desarrollo
+app.use(cors());
 app.use(morgan('dev'))
 // Decodificacion de parametros URL y BODY
 app.use(express.urlencoded({extended: false}))
@@ -33,7 +36,8 @@ app.set("view engine", "hbs")
 app.use("/", auth);
 app.use("/destinations", dest);
 app.use("/users", usr);
-app.use("/posts", post)
+app.use("/posts", post);
+app.use("/candidates", candidates);
 
 app.get("*", express.static("./public"))
 // Inicializacion del Servidor
